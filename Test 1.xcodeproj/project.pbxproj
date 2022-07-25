@@ -13,6 +13,8 @@
 		C23927E4288EDDBD00AFB937 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23927E2288EDDBD00AFB937 /* Main.storyboard */; };
 		C23927E6288EDDBF00AFB937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23927E5288EDDBF00AFB937 /* Assets.xcassets */; };
 		C23927E9288EDDBF00AFB937 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23927E7288EDDBF00AFB937 /* LaunchScreen.storyboard */; };
+		C23927F1288EDEB600AFB937 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23927F0288EDEB600AFB937 /* MapViewController.swift */; };
+		C27F2734288F07E90073C20F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F2732288F07E90073C20F /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		C23927E5288EDDBF00AFB937 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C23927E8288EDDBF00AFB937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C23927EA288EDDBF00AFB937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C23927F0288EDEB600AFB937 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C27F2733288F07E90073C20F /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = "Test 1/Base.lproj/MapView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				C23927DC288EDDBD00AFB937 /* AppDelegate.swift */,
 				C23927DE288EDDBD00AFB937 /* SceneDelegate.swift */,
+				C23927F0288EDEB600AFB937 /* MapViewController.swift */,
+				C27F2732288F07E90073C20F /* MapView.swift */,
 				C23927E0288EDDBD00AFB937 /* ViewController.swift */,
 				C23927E2288EDDBD00AFB937 /* Main.storyboard */,
 				C23927E5288EDDBF00AFB937 /* Assets.xcassets */,
@@ -140,7 +146,9 @@
 			files = (
 				C23927E1288EDDBD00AFB937 /* ViewController.swift in Sources */,
 				C23927DD288EDDBD00AFB937 /* AppDelegate.swift in Sources */,
+				C27F2734288F07E90073C20F /* MapView.swift in Sources */,
 				C23927DF288EDDBD00AFB937 /* SceneDelegate.swift in Sources */,
+				C23927F1288EDEB600AFB937 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +169,14 @@
 				C23927E8288EDDBF00AFB937 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C27F2732288F07E90073C20F /* MapView.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C27F2733288F07E90073C20F /* Base */,
+			);
+			name = MapView.swift;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
