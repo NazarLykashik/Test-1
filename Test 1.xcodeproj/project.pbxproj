@@ -16,6 +16,7 @@
 		C23927E9288EDDBF00AFB937 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23927E7288EDDBF00AFB937 /* LaunchScreen.storyboard */; };
 		C23927F1288EDEB600AFB937 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23927F0288EDEB600AFB937 /* MapViewController.swift */; };
 		C27F2734288F07E90073C20F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F2732288F07E90073C20F /* MapView.swift */; };
+		C2F585E2289036B300F7A967 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F585E1289036B300F7A967 /* CityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C23927EA288EDDBF00AFB937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C23927F0288EDEB600AFB937 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C27F2733288F07E90073C20F /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = "Test 1/Base.lproj/MapView.swift"; sourceTree = "<group>"; };
+		C2F585E1289036B300F7A967 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		EEAA62DDC530A7B143E58366 /* Pods-Test 1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test 1.release.xcconfig"; path = "Target Support Files/Pods-Test 1/Pods-Test 1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,16 +89,33 @@
 			children = (
 				C23927DC288EDDBD00AFB937 /* AppDelegate.swift */,
 				C23927DE288EDDBD00AFB937 /* SceneDelegate.swift */,
-				C23927F0288EDEB600AFB937 /* MapViewController.swift */,
-				C27F2732288F07E90073C20F /* MapView.swift */,
 				C23927E0288EDDBD00AFB937 /* ViewController.swift */,
 				C23927E2288EDDBD00AFB937 /* Main.storyboard */,
-				C23927E5288EDDBF00AFB937 /* Assets.xcassets */,
+				C2F585DC2890360D00F7A967 /* 2 example */,
+				C2F585DB2890357200F7A967 /* Map 1 example */,
 				C23927E7288EDDBF00AFB937 /* LaunchScreen.storyboard */,
+				C23927E5288EDDBF00AFB937 /* Assets.xcassets */,
 				C23927EA288EDDBF00AFB937 /* Info.plist */,
 				C20AEB92288F3A01002323F9 /* Test 1-Bridging-Header.h */,
 			);
 			path = "Test 1";
+			sourceTree = "<group>";
+		};
+		C2F585DB2890357200F7A967 /* Map 1 example */ = {
+			isa = PBXGroup;
+			children = (
+				C23927F0288EDEB600AFB937 /* MapViewController.swift */,
+				C27F2732288F07E90073C20F /* MapView.swift */,
+			);
+			path = "Map 1 example";
+			sourceTree = "<group>";
+		};
+		C2F585DC2890360D00F7A967 /* 2 example */ = {
+			isa = PBXGroup;
+			children = (
+				C2F585E1289036B300F7A967 /* CityViewController.swift */,
+			);
+			path = "2 example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +239,7 @@
 				C27F2734288F07E90073C20F /* MapView.swift in Sources */,
 				C23927DF288EDDBD00AFB937 /* SceneDelegate.swift in Sources */,
 				C23927F1288EDEB600AFB937 /* MapViewController.swift in Sources */,
+				C2F585E2289036B300F7A967 /* CityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
