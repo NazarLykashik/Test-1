@@ -102,31 +102,17 @@
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="83.705357142857139"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map View-->
         <scene sceneID="a3l-6A-8hT">
             <objects>
-                <viewController id="YjD-x3-erp" customClass="MapViewController" customModule="Test_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YjD-x3-erp" customClass="MapView" customModule="Test_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ooO-xP-BIB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="K2n-oO-xdz">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                            </mapView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hKL-iN-MuF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="K2n-oO-xdz" firstAttribute="top" secondItem="hKL-iN-MuF" secondAttribute="top" id="1mi-7o-eYX"/>
-                            <constraint firstItem="K2n-oO-xdz" firstAttribute="trailing" secondItem="hKL-iN-MuF" secondAttribute="trailing" id="4a3-h2-gq2"/>
-                            <constraint firstItem="K2n-oO-xdz" firstAttribute="bottom" secondItem="hKL-iN-MuF" secondAttribute="bottom" id="faI-jN-JQz"/>
-                            <constraint firstItem="K2n-oO-xdz" firstAttribute="leading" secondItem="hKL-iN-MuF" secondAttribute="leading" id="unL-YK-HN0"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LxX-uK-Mul"/>
-                    <connections>
-                        <outlet property="mapView" destination="K2n-oO-xdz" id="qad-3f-f4O"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHP-mP-sSQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
