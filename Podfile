@@ -7,4 +7,5 @@ target 'Test 1' do
 
   # Pods for Test 1
 pod 'GoogleMaps'
+pod 'Alamofire'
 end

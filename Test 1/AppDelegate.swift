@@ -6,18 +6,15 @@
 //
 
 import UIKit
- 
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
- 
+  
   var window: UIWindow?
   // 1
-  let googleMapsApiKey = "AIzaSyD2kzbXMqCIxtzbH_Ujj1VkdwYa6x8DrOc"
  
-  func application(application: UIApplication, didFinishLaunchingWithOptions
-      launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // 2
-    GMSServices.provideAPIKey(googleMapsApiKey)
+  func application(application: UIApplication) -> Bool {
     return true
   }
 }

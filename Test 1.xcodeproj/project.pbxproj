@@ -15,8 +15,10 @@
 		C23927E6288EDDBF00AFB937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23927E5288EDDBF00AFB937 /* Assets.xcassets */; };
 		C23927E9288EDDBF00AFB937 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23927E7288EDDBF00AFB937 /* LaunchScreen.storyboard */; };
 		C23927F1288EDEB600AFB937 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23927F0288EDEB600AFB937 /* MapViewController.swift */; };
-		C27F2734288F07E90073C20F /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27F2732288F07E90073C20F /* MapView.swift */; };
 		C2F585E2289036B300F7A967 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F585E1289036B300F7A967 /* CityViewController.swift */; };
+		C2F585E4289055C600F7A967 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F585E3289055C600F7A967 /* MapController.swift */; };
+		C2F585E728905AC600F7A967 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F585E628905AC600F7A967 /* City.swift */; };
+		C2F585E92890A1DA00F7A967 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F585E82890A1DA00F7A967 /* Points.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +34,10 @@
 		C23927E8288EDDBF00AFB937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C23927EA288EDDBF00AFB937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C23927F0288EDEB600AFB937 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		C27F2733288F07E90073C20F /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = "Test 1/Base.lproj/MapView.swift"; sourceTree = "<group>"; };
 		C2F585E1289036B300F7A967 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		C2F585E3289055C600F7A967 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapController.swift; path = "Test 1/MapController.swift"; sourceTree = "<group>"; };
+		C2F585E628905AC600F7A967 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		C2F585E82890A1DA00F7A967 /* Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
 		EEAA62DDC530A7B143E58366 /* Pods-Test 1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test 1.release.xcconfig"; path = "Target Support Files/Pods-Test 1/Pods-Test 1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				C23927F0288EDEB600AFB937 /* MapViewController.swift */,
-				C27F2732288F07E90073C20F /* MapView.swift */,
+				C2F585E82890A1DA00F7A967 /* Points.swift */,
+				C2F585E3289055C600F7A967 /* MapController.swift */,
 			);
 			path = "Map 1 example";
 			sourceTree = "<group>";
@@ -113,9 +118,18 @@
 		C2F585DC2890360D00F7A967 /* 2 example */ = {
 			isa = PBXGroup;
 			children = (
+				C2F585E528905AAF00F7A967 /* Models */,
 				C2F585E1289036B300F7A967 /* CityViewController.swift */,
 			);
 			path = "2 example";
+			sourceTree = "<group>";
+		};
+		C2F585E528905AAF00F7A967 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C2F585E628905AC600F7A967 /* City.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +144,7 @@
 				C23927D6288EDDBD00AFB937 /* Frameworks */,
 				C23927D7288EDDBD00AFB937 /* Resources */,
 				584343E972D53ED1A55DE9C3 /* [CP] Copy Pods Resources */,
+				67839A6D82806A9445C20075 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,6 +242,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test 1/Pods-Test 1-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		67839A6D82806A9445C20075 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test 1/Pods-Test 1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Test 1/Pods-Test 1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test 1/Pods-Test 1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -234,12 +266,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F585E92890A1DA00F7A967 /* Points.swift in Sources */,
 				C23927E1288EDDBD00AFB937 /* ViewController.swift in Sources */,
 				C23927DD288EDDBD00AFB937 /* AppDelegate.swift in Sources */,
-				C27F2734288F07E90073C20F /* MapView.swift in Sources */,
 				C23927DF288EDDBD00AFB937 /* SceneDelegate.swift in Sources */,
 				C23927F1288EDEB600AFB937 /* MapViewController.swift in Sources */,
+				C2F585E4289055C600F7A967 /* MapController.swift in Sources */,
 				C2F585E2289036B300F7A967 /* CityViewController.swift in Sources */,
+				C2F585E728905AC600F7A967 /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,14 +294,6 @@
 				C23927E8288EDDBF00AFB937 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		C27F2732288F07E90073C20F /* MapView.swift */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C27F2733288F07E90073C20F /* Base */,
-			);
-			name = MapView.swift;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
