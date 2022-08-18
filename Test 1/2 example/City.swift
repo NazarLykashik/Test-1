@@ -5,7 +5,6 @@
 //  Created by Nazar Lykashik on 26.07.22.
 //
 
-import Foundation
 
 struct City: Decodable {
     let city_is_regional: Bool

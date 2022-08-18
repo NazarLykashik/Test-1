@@ -151,6 +151,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Гарады" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="always" id="Mpb-Sd-v4r"/>
+                    <connections>
+                        <outlet property="tableView" destination="g9r-eX-wV9" id="iV1-ih-yaS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcc-DI-jWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

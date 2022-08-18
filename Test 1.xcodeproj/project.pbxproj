@@ -118,18 +118,10 @@
 		C2F585DC2890360D00F7A967 /* 2 example */ = {
 			isa = PBXGroup;
 			children = (
-				C2F585E528905AAF00F7A967 /* Models */,
+				C2F585E628905AC600F7A967 /* City.swift */,
 				C2F585E1289036B300F7A967 /* CityViewController.swift */,
 			);
 			path = "2 example";
-			sourceTree = "<group>";
-		};
-		C2F585E528905AAF00F7A967 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C2F585E628905AC600F7A967 /* City.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
