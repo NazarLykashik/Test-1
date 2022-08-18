@@ -8,9 +8,7 @@
 import UIKit
 import Foundation
 
-
-
-class CityViewController: UIViewController, UITableViewDataSource {
+class CityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet var tableView: UITableView!
     private let jsonUrl = "https://krokapp.by/api/get_cities/11/"
@@ -22,6 +20,7 @@ class CityViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         fechData()
+
     }
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,22 +32,34 @@ class CityViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let city = citiesRu[indexPath.row]
         cell.textLabel?.text = city.name
+        
 
         
-        DispatchQueue.global().async {
-            guard let imageUrl = URL(string: city.logo) else { return }
-            guard let imageData = try? Data(contentsOf: imageUrl) else { return }
+// MARK: - modod without multithreading
+//        let imageUrl = URL(string: city.logo)!
+//        let imageData = try? Data(contentsOf: imageUrl)
 
-            DispatchQueue.main.async {
-                cell.imageView?.image = UIImage(data: imageData)
-                
-            }
-        }
+//        cell.imageView?.image = UIImage(data: imageData!)
+        
+// MARK: - modod with multithreading
+
+                DispatchQueue.global().async {
+                    guard let imageUrl = URL(string: city.logo) else {return}
+                    guard let imageData = try? Data(contentsOf: imageUrl) else {return}
+        
+                    DispatchQueue.main.async {
+                        cell.imageView?.image = UIImage(data: imageData)
+                    }
+                }
 
         return cell
     }
-
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+
+
     func fechData(){
         guard let url = URL(string: jsonUrl) else {return}
         URLSession.shared.dataTask(with: url) { [self] (data, _, error) in
@@ -62,17 +73,15 @@ class CityViewController: UIViewController, UITableViewDataSource {
                 self.cities = try JSONDecoder().decode([City].self, from: data)
                 let lang = cities.filter { $0.lang == 3 && $0.name != "" }
                 citiesRu = lang
-                
+
                 DispatchQueue.main.async {
-                    self.tableView.reloadData();
+                    self.tableView.reloadData()
                 }
             } catch let error{
                 print(error)
             }
         }.resume()
     }
-    
-
 }
 
 
