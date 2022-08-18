@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class CityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CityViewController: UIViewController, UITableViewDataSource{
 
     @IBOutlet var tableView: UITableView!
     private let jsonUrl = "https://krokapp.by/api/get_cities/11/"
@@ -55,9 +55,7 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
+
 
 
     func fechData(){
