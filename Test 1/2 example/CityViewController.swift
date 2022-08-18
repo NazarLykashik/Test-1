@@ -33,8 +33,21 @@ class CityViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let city = citiesRu[indexPath.row]
         cell.textLabel?.text = city.name
+
+        
+        DispatchQueue.global().async {
+            guard let imageUrl = URL(string: city.logo) else { return }
+            guard let imageData = try? Data(contentsOf: imageUrl) else { return }
+
+            DispatchQueue.main.async {
+                cell.imageView?.image = UIImage(data: imageData)
+                
+            }
+        }
+
         return cell
     }
+
     
     func fechData(){
         guard let url = URL(string: jsonUrl) else {return}
@@ -61,4 +74,5 @@ class CityViewController: UIViewController, UITableViewDataSource {
     
 
 }
+
 
