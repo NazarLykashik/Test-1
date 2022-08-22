@@ -15,9 +15,10 @@
 		C23927E6288EDDBF00AFB937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23927E5288EDDBF00AFB937 /* Assets.xcassets */; };
 		C23927E9288EDDBF00AFB937 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23927E7288EDDBF00AFB937 /* LaunchScreen.storyboard */; };
 		C23927F1288EDEB600AFB937 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23927F0288EDEB600AFB937 /* MapViewController.swift */; };
+		C286909628AE7710009CFD02 /* PlasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286909528AE7710009CFD02 /* PlasesViewController.swift */; };
 		C2F585E2289036B300F7A967 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F585E1289036B300F7A967 /* CityViewController.swift */; };
 		C2F585E4289055C600F7A967 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F585E3289055C600F7A967 /* MapController.swift */; };
-		C2F585E728905AC600F7A967 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F585E628905AC600F7A967 /* City.swift */; };
+		C2F585E728905AC600F7A967 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F585E628905AC600F7A967 /* Model.swift */; };
 		C2F585E92890A1DA00F7A967 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F585E82890A1DA00F7A967 /* Points.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,9 +35,10 @@
 		C23927E8288EDDBF00AFB937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C23927EA288EDDBF00AFB937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C23927F0288EDEB600AFB937 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C286909528AE7710009CFD02 /* PlasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasesViewController.swift; sourceTree = "<group>"; };
 		C2F585E1289036B300F7A967 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		C2F585E3289055C600F7A967 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapController.swift; path = "Test 1/MapController.swift"; sourceTree = "<group>"; };
-		C2F585E628905AC600F7A967 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		C2F585E628905AC600F7A967 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C2F585E82890A1DA00F7A967 /* Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
 		EEAA62DDC530A7B143E58366 /* Pods-Test 1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test 1.release.xcconfig"; path = "Target Support Files/Pods-Test 1/Pods-Test 1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,7 +120,8 @@
 		C2F585DC2890360D00F7A967 /* 2 example */ = {
 			isa = PBXGroup;
 			children = (
-				C2F585E628905AC600F7A967 /* City.swift */,
+				C2F585E628905AC600F7A967 /* Model.swift */,
+				C286909528AE7710009CFD02 /* PlasesViewController.swift */,
 				C2F585E1289036B300F7A967 /* CityViewController.swift */,
 			);
 			path = "2 example";
@@ -260,12 +263,13 @@
 			files = (
 				C2F585E92890A1DA00F7A967 /* Points.swift in Sources */,
 				C23927E1288EDDBD00AFB937 /* ViewController.swift in Sources */,
+				C286909628AE7710009CFD02 /* PlasesViewController.swift in Sources */,
 				C23927DD288EDDBD00AFB937 /* AppDelegate.swift in Sources */,
 				C23927DF288EDDBD00AFB937 /* SceneDelegate.swift in Sources */,
 				C23927F1288EDEB600AFB937 /* MapViewController.swift in Sources */,
 				C2F585E4289055C600F7A967 /* MapController.swift in Sources */,
 				C2F585E2289036B300F7A967 /* CityViewController.swift in Sources */,
-				C2F585E728905AC600F7A967 /* City.swift in Sources */,
+				C2F585E728905AC600F7A967 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +421,7 @@
 				DEVELOPMENT_TEAM = Q2L84UB3N5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Test 1/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для определения местоположения ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -449,6 +454,7 @@
 				DEVELOPMENT_TEAM = Q2L84UB3N5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Test 1/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Для определения местоположения ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
