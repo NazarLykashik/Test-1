@@ -6,24 +6,74 @@
 //
 
 import UIKit
+import Alamofire
 
 class PlaceViewController: UIViewController {
-
+    @IBOutlet var imageOfPlace: UIImageView!
+    @IBOutlet var nameOfPlace: UILabel!
+    @IBOutlet var voiseDescription: UIButton!
+    @IBOutlet var descriptionOfPlace: UILabel!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
+    
+    var name: String = ""
+    var photo: String = ""
+    var text: String = ""
+    var sound: String = ""
+    var creation_date: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        nameOfPlace.text = name
+        descriptionOfPlace.text = text.html2String
+        fetchImage()
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        
+        
     }
-    
+    private func fetchImage(){
+        guard let url = URL(string: photo) else {return}
+        
+        // method with URLSession
+        
+        let session = URLSession.shared
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        session.dataTask(with: url) { (data, responce, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            if let responce = responce{
+                print(responce)
+            }
+            if let data = data, let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    self.imageOfPlace.image = image
+                }
+            }
+        }.resume()
     }
-    */
+}
 
+// delate html simbols
+extension Data {
+    var html2AttributedString: NSAttributedString? {
+        do {
+            return try NSAttributedString(data: self, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            print("error:", error)
+            return  nil
+        }
+    }
+    var html2String: String { html2AttributedString?.string ?? "" }
+}
+extension StringProtocol {
+    var html2AttributedString: NSAttributedString? {
+        Data(utf8).html2AttributedString
+    }
+    var html2String: String {
+        html2AttributedString?.string ?? ""
+    }
 }

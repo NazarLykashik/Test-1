@@ -61,10 +61,17 @@ class PlasesViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if let indexPath = tableView.indexPathForSelectedRow{
+            let plasesVC = segue.destination as! PlaceViewController
+            let place = placesRu[indexPath.row]
+            plasesVC.name = place.name ?? "no data -> error"
+            plasesVC.text = place.text ?? "no data -> error"
+            plasesVC.sound = place.sound ?? "no data -> error"
+            plasesVC.creation_date = place.creation_date ?? "no data -> error"
+            plasesVC.photo = place.photo ?? "no data -> error"
+        }
     }
     
     func fetchPlases(){
@@ -73,7 +80,7 @@ class PlasesViewController: UITableViewController {
             switch dataResponse.result{
             case .success(let value):
                 self.placesRu = Plases.getPlases(from: value).filter { $0.lang == 3 && $0.name != "" && $0.city_id == self.cityId }
-                print(self.placesRu)
+                //print(self.placesRu)
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }

@@ -57,9 +57,9 @@ class CityViewController: UIViewController, UITableViewDataSource{
   // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow{
-            let detailVC = segue.destination as! PlasesViewController
+            let plasesVC = segue.destination as! PlasesViewController
             let city = citiesRu[indexPath.row]
-            detailVC.cityId = city.id
+            plasesVC.cityId = city.id
             print(city.id)
         }
     }
