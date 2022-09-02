@@ -288,36 +288,6 @@
             </objects>
             <point key="canvasLocation" x="2835" y="84"/>
         </scene>
-        <!--Map View Controller-->
-        <scene sceneID="vco-K4-9IJ">
-            <objects>
-                <viewController id="hR3-Mg-1iG" customClass="MapViewController" customModule="Test_1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="V0c-0q-Id5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hii-MI-Kto">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                            </mapView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="laq-5x-jic"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="hii-MI-Kto" firstAttribute="bottom" secondItem="laq-5x-jic" secondAttribute="bottom" id="U3n-wy-4BR"/>
-                            <constraint firstItem="hii-MI-Kto" firstAttribute="trailing" secondItem="laq-5x-jic" secondAttribute="trailing" id="lQb-eR-dLg"/>
-                            <constraint firstItem="hii-MI-Kto" firstAttribute="top" secondItem="laq-5x-jic" secondAttribute="top" id="obr-YT-NJN"/>
-                            <constraint firstItem="hii-MI-Kto" firstAttribute="leading" secondItem="laq-5x-jic" secondAttribute="leading" id="z8Z-1U-t8g"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="JQc-7a-Tbe"/>
-                    <connections>
-                        <outlet property="mapView" destination="hii-MI-Kto" id="z1b-Rq-u4l"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kVJ-2E-ObD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="945" y="-640"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="NF4-a9-reO">
             <objects>
