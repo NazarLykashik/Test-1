@@ -35,29 +35,40 @@ class PlaceViewController: UIViewController {
     private func fetchImage(){
         guard let url = URL(string: photo) else {return}
         
-        // method with URLSession
+        //MARK: - method with URLSession
         
-        let session = URLSession.shared
+//        let session = URLSession.shared
+//
+//        session.dataTask(with: url) { (data, responce, error) in
+//            if let error = error {
+//                print(error.localizedDescription)
+//                return
+//            }
+//            if let responce = responce{
+//                print(responce)
+//            }
+//            if let data = data, let image = UIImage(data: data) {
+//                DispatchQueue.main.async {
+//                    self.activityIndicator.stopAnimating()
+//                    self.imageOfPlace.image = image
+//                }
+//            }
+//        }.resume()
 
-        session.dataTask(with: url) { (data, responce, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                return
+        //MARK: - method with Alamofire
+        AF.request(url).validate().responseData { dataResponse in
+            switch dataResponse.result{
+            case .success(let data):
+                self.imageOfPlace.image = UIImage(data: data, scale:1)
+                self.activityIndicator.stopAnimating()
+            case .failure(let error):
+                print(error)
             }
-            if let responce = responce{
-                print(responce)
-            }
-            if let data = data, let image = UIImage(data: data) {
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.imageOfPlace.image = image
-                }
-            }
-        }.resume()
+        }
     }
 }
 
-// delate html simbols
+//MARK: -  delate html simbols
 extension Data {
     var html2AttributedString: NSAttributedString? {
         do {

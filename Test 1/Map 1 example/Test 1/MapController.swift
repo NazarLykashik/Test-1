@@ -15,10 +15,6 @@ class MapController: UIViewController {
     var points: [Points] = []
     
     
-    // 1) create class Point
-    // 2) Point[] = []
-    // 3) create [] GMSMarker[] title === pointname
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +27,14 @@ class MapController: UIViewController {
             switch dataResponse.result{
             case .success(let value):
                 //print(value)
-                self.points = Points.getPoinst(from: value)//.filter { $0.lang_id == 3 && $0.point_name != "" }
+                self.points = Points.getPoinst(from: value).filter { $0.lang_id == 3 && $0.point_name != "" }
                 self.viewDidLoad()
                 print(self.points)
                 for point in self.points {
                     
                     let position = CLLocationCoordinate2D(latitude: CLLocationDegrees(Float(point.point!.lat)), longitude: CLLocationDegrees(Float(point.point!.lng)))
                     let marker = GMSMarker(position: position)
-                    marker.title = point.point_name
+                    marker.title = point.point_name?.html2String
                     marker.map = self.map
                     
                     //print(point)
@@ -50,49 +46,5 @@ class MapController: UIViewController {
         }
     }
 }
-//    // MARK: - CLLocationManagerDelegate
-//    //1
-//    extension MapViewController: CLLocationManagerDelegate {
-//      // 2
-//      func locationManager(
-//        _ manager: CLLocationManager,
-//        didChangeAuthorization status: CLAuthorizationStatus
-//      ) {
-//        // 3
-//        guard status == .authorizedWhenInUse else {
-//          return
-//        }
-//        // 4
-//        locationManager.requestLocation()
-//
-//        //5
-//        mapView.isMyLocationEnabled = true
-//        mapView.settings.myLocationButton = true
-//      }
-//
-//      // 6
-//      func locationManager(
-//        _ manager: CLLocationManager,
-//        didUpdateLocations locations: [CLLocation]) {
-//        guard let location = locations.first else {
-//          return
-//        }
-//
-//        // 7
-//        mapView.camera = GMSCameraPosition(
-//          target: location.coordinate,
-//          zoom: 15,
-//          bearing: 0,
-//          viewingAngle: 0)
-//      }
-//
-//      // 8
-//      func locationManager(
-//        _ manager: CLLocationManager,
-//        didFailWithError error: Error
-//      ) {
-//        print(error)
-//      }
-//    }
 
 
