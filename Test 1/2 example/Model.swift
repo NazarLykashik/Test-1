@@ -30,8 +30,8 @@ struct Plases: Decodable{
     let lang: Int?
     let last_edit_time: Int?
     let creation_date: String?
-    let lat: Float?
-    let lng: Float?
+    let lat: Double
+    let lng: Double
     let logo: String?
     let photo: String?
     let city_id: Int?
@@ -49,8 +49,8 @@ struct Plases: Decodable{
         lang = dictPlase["lang"] as? Int
         last_edit_time = dictPlase["last_edit_time"] as? Int
         creation_date = dictPlase["creation_date"] as? String
-        lat = dictPlase["lat"] as? Float
-        lng = dictPlase["lng"] as? Float
+        lat = dictPlase["lat"] as! Double
+        lng = dictPlase["lng"] as! Double
         logo = dictPlase["logo"] as? String
         photo = dictPlase["photo"] as? String
         city_id = dictPlase["city_id"] as? Int

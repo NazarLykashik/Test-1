@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		410D152BD199227A15136027 /* Pods_Test_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339FBA386D812CF4543D57DC /* Pods_Test_1.framework */; };
+		C231756528C23957008ACAFA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C231756428C23957008ACAFA /* MapViewController.swift */; };
 		C23927DD288EDDBD00AFB937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23927DC288EDDBD00AFB937 /* AppDelegate.swift */; };
 		C23927DF288EDDBD00AFB937 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23927DE288EDDBD00AFB937 /* SceneDelegate.swift */; };
 		C23927E1288EDDBD00AFB937 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23927E0288EDDBD00AFB937 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		339FBA386D812CF4543D57DC /* Pods_Test_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5F565394349DBFF123784A /* Pods-Test 1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test 1.debug.xcconfig"; path = "Target Support Files/Pods-Test 1/Pods-Test 1.debug.xcconfig"; sourceTree = "<group>"; };
 		C20AEB92288F3A01002323F9 /* Test 1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Test 1-Bridging-Header.h"; sourceTree = "<group>"; };
+		C231756428C23957008ACAFA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C23927D9288EDDBD00AFB937 /* Test 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C23927DC288EDDBD00AFB937 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C23927DE288EDDBD00AFB937 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				C2F585E1289036B300F7A967 /* CityViewController.swift */,
 				C286909528AE7710009CFD02 /* PlasesViewController.swift */,
 				C2C737DA28B92102005B8877 /* PlaceViewController.swift */,
+				C231756428C23957008ACAFA /* MapViewController.swift */,
 			);
 			path = "2 example";
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				C2F585E92890A1DA00F7A967 /* Points.swift in Sources */,
 				C23927E1288EDDBD00AFB937 /* ViewController.swift in Sources */,
 				C286909628AE7710009CFD02 /* PlasesViewController.swift in Sources */,
+				C231756528C23957008ACAFA /* MapViewController.swift in Sources */,
 				C23927DD288EDDBD00AFB937 /* AppDelegate.swift in Sources */,
 				C23927DF288EDDBD00AFB937 /* SceneDelegate.swift in Sources */,
 				C2F585E4289055C600F7A967 /* MapController.swift in Sources */,

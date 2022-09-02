@@ -66,14 +66,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PW-Tx-axj">
-                                <rect key="frame" x="168" y="626" width="82" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="🌐 Мова">
-                                    <color key="titleColor" systemColor="labelColor"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85I-GH-jfy">
                                 <rect key="frame" x="162" y="687" width="94" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,6 +81,14 @@
                                     </imageReference>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9PW-Tx-axj">
+                                <rect key="frame" x="146" y="493" width="82" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="🌐 Мова">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ggo-p6-E2U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -99,17 +99,32 @@
             </objects>
             <point key="canvasLocation" x="4619" y="84"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="n3b-29-bTv">
             <objects>
-                <viewController id="WtA-iY-Y6o" sceneMemberID="viewController">
+                <viewController id="WtA-iY-Y6o" customClass="MapViewController" customModule="Test_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qHh-X5-BvP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CH-tX-to0" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8zP-cM-Ueb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0CH-tX-to0" firstAttribute="top" secondItem="8zP-cM-Ueb" secondAttribute="top" id="2qA-qV-Ozd"/>
+                            <constraint firstItem="8zP-cM-Ueb" firstAttribute="bottom" secondItem="0CH-tX-to0" secondAttribute="bottom" id="b1J-JQ-5fm"/>
+                            <constraint firstItem="0CH-tX-to0" firstAttribute="leading" secondItem="8zP-cM-Ueb" secondAttribute="leading" id="mH1-ki-zDk"/>
+                            <constraint firstItem="8zP-cM-Ueb" firstAttribute="trailing" secondItem="0CH-tX-to0" secondAttribute="trailing" id="mQg-Sq-wrB"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="map" catalog="system" id="sSf-XP-9xW"/>
+                    <connections>
+                        <outlet property="mapView" destination="0CH-tX-to0" id="0Sp-io-axH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rt9-FK-HnC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -279,8 +294,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="Bxc-5V-VIN" kind="relationship" relationship="viewControllers" id="mAH-JF-Yxb"/>
-                        <segue destination="Ejs-1k-HGo" kind="relationship" relationship="viewControllers" id="JrM-gS-cGA"/>
                         <segue destination="WtA-iY-Y6o" kind="relationship" relationship="viewControllers" id="XUk-FJ-D2k"/>
+                        <segue destination="Ejs-1k-HGo" kind="relationship" relationship="viewControllers" id="JrM-gS-cGA"/>
                         <segue destination="lcX-t3-9DB" kind="relationship" relationship="viewControllers" id="O2N-4z-id8"/>
                     </connections>
                 </tabBarController>
@@ -425,6 +440,9 @@
         <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
