@@ -6,13 +6,13 @@
 //
 
 
-struct City: Decodable {
+struct City: Codable {
     let city_is_regional: Bool
     let id: Int
     let id_locale: Int
     let lang: Int
     let last_edit_time: Int
-    let logo: String
+    let logo: String?
     let name: String
     let region: String
     let visible: Bool
@@ -20,7 +20,7 @@ struct City: Decodable {
     
 }
 
-struct Plases: Decodable{
+struct Plases: Decodable, Encodable{
     let index: Int?
     let id: Int?
     let id_point: Int?

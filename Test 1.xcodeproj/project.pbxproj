@@ -15,6 +15,9 @@
 		C23927E4288EDDBD00AFB937 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23927E2288EDDBD00AFB937 /* Main.storyboard */; };
 		C23927E6288EDDBF00AFB937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C23927E5288EDDBF00AFB937 /* Assets.xcassets */; };
 		C23927E9288EDDBF00AFB937 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C23927E7288EDDBF00AFB937 /* LaunchScreen.storyboard */; };
+		C26FDB3528C607C100141F2D /* StoregeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FDB3428C607C100141F2D /* StoregeManager.swift */; };
+		C26FDB3728C79AB100141F2D /* ImageCashing.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FDB3628C79AB100141F2D /* ImageCashing.swift */; };
+		C26FDB3A28C7B6F500141F2D /* CellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26FDB3928C7B6F500141F2D /* CellController.swift */; };
 		C286909628AE7710009CFD02 /* PlasesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C286909528AE7710009CFD02 /* PlasesViewController.swift */; };
 		C2C737DB28B92102005B8877 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C737DA28B92102005B8877 /* PlaceViewController.swift */; };
 		C2F585E2289036B300F7A967 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F585E1289036B300F7A967 /* CityViewController.swift */; };
@@ -36,6 +39,9 @@
 		C23927E5288EDDBF00AFB937 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C23927E8288EDDBF00AFB937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C23927EA288EDDBF00AFB937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C26FDB3428C607C100141F2D /* StoregeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoregeManager.swift; sourceTree = "<group>"; };
+		C26FDB3628C79AB100141F2D /* ImageCashing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCashing.swift; sourceTree = "<group>"; };
+		C26FDB3928C7B6F500141F2D /* CellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellController.swift; sourceTree = "<group>"; };
 		C286909528AE7710009CFD02 /* PlasesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlasesViewController.swift; sourceTree = "<group>"; };
 		C2C737DA28B92102005B8877 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		C2F585E1289036B300F7A967 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +115,16 @@
 			path = "Test 1";
 			sourceTree = "<group>";
 		};
+		C26FDB3828C79AB900141F2D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C26FDB3928C7B6F500141F2D /* CellController.swift */,
+				C26FDB3628C79AB100141F2D /* ImageCashing.swift */,
+				C26FDB3428C607C100141F2D /* StoregeManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		C2F585DB2890357200F7A967 /* Map 1 example */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +142,7 @@
 				C286909528AE7710009CFD02 /* PlasesViewController.swift */,
 				C2C737DA28B92102005B8877 /* PlaceViewController.swift */,
 				C231756428C23957008ACAFA /* MapViewController.swift */,
+				C26FDB3828C79AB900141F2D /* Helper */,
 			);
 			path = "2 example";
 			sourceTree = "<group>";
@@ -266,13 +283,16 @@
 			files = (
 				C2F585E92890A1DA00F7A967 /* Points.swift in Sources */,
 				C23927E1288EDDBD00AFB937 /* ViewController.swift in Sources */,
+				C26FDB3528C607C100141F2D /* StoregeManager.swift in Sources */,
 				C286909628AE7710009CFD02 /* PlasesViewController.swift in Sources */,
 				C231756528C23957008ACAFA /* MapViewController.swift in Sources */,
+				C26FDB3728C79AB100141F2D /* ImageCashing.swift in Sources */,
 				C23927DD288EDDBD00AFB937 /* AppDelegate.swift in Sources */,
 				C23927DF288EDDBD00AFB937 /* SceneDelegate.swift in Sources */,
 				C2F585E4289055C600F7A967 /* MapController.swift in Sources */,
 				C2F585E2289036B300F7A967 /* CityViewController.swift in Sources */,
 				C2C737DB28B92102005B8877 /* PlaceViewController.swift in Sources */,
+				C26FDB3A28C7B6F500141F2D /* CellController.swift in Sources */,
 				C2F585E728905AC600F7A967 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

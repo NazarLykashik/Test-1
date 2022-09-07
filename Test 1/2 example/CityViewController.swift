@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 
 class CityViewController: UIViewController, UITableViewDataSource{
-
+    
     @IBOutlet var tableView: UITableView!
     private let jsonUrl = "https://krokapp.by/api/get_cities/11/"
     
@@ -20,6 +20,7 @@ class CityViewController: UIViewController, UITableViewDataSource{
     override func viewDidLoad() {
         super.viewDidLoad()
         fechData()
+        tableView.rowHeight = 100
 
     }
   
@@ -29,29 +30,9 @@ class CityViewController: UIViewController, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ModifidedCell
         let city = citiesRu[indexPath.row]
-        cell.textLabel?.text = city.name
-        
-
-        
-// MARK: - modod without multithreading
-//        let imageUrl = URL(string: city.logo)!
-//        let imageData = try? Data(contentsOf: imageUrl)
-
-//        cell.imageView?.image = UIImage(data: imageData!)
-        
-// MARK: - modod with multithreading
-
-                DispatchQueue.global().async {
-                    guard let imageUrl = URL(string: city.logo) else {return}
-                    guard let imageData = try? Data(contentsOf: imageUrl) else {return}
-        
-                    DispatchQueue.main.async {
-                        cell.imageView?.image = UIImage(data: imageData)
-                    }
-                }
-
+        cell.configure(with: city)
         return cell
     }
   // MARK: - Navigation
@@ -60,7 +41,8 @@ class CityViewController: UIViewController, UITableViewDataSource{
             let plasesVC = segue.destination as! PlasesViewController
             let city = citiesRu[indexPath.row]
             plasesVC.cityId = city.id
-            print(city.id)
+            
+            //print(city.id)
         }
     }
 
