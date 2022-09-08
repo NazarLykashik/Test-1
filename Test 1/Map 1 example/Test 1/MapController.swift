@@ -26,10 +26,7 @@ class MapController: UIViewController {
         AF.request(url).validate().responseJSON { dataResponse in
             switch dataResponse.result{
             case .success(let value):
-                //print(value)
                 self.points = Points.getPoinst(from: value).filter { $0.lang_id == 3 && $0.point_name != "" }
-                self.viewDidLoad()
-                print(self.points)
                 for point in self.points {
                     
                     let position = CLLocationCoordinate2D(latitude: CLLocationDegrees(Float(point.point!.lat)), longitude: CLLocationDegrees(Float(point.point!.lng)))

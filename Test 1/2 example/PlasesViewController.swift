@@ -12,11 +12,13 @@ class PlasesViewController: UITableViewController {
     
     @IBOutlet var DetailTableView: UITableView!
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+
     
     let jsonOfPlases = "https://krokapp.by/api/get_points/11/"
     var placesRu: [Plases] = []
     var currentPlace: [Plases] = []
     var cityId = 0
+    var cityName = ""
 
     
     override func viewDidLoad() {
@@ -29,6 +31,7 @@ class PlasesViewController: UITableViewController {
         
         placesRu = StorageManager.shared.getPlace()
         currentPlace = placesRu.filter{$0.city_id == cityId}
+        navigationItem.title = cityName
     }
 
     // MARK: - Table view data source

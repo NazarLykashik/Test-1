@@ -29,7 +29,6 @@ class MapViewController: UIViewController {
             switch dataResponse.result{
             case .success(let value):
                 self.placesRu = Plases.getPlases(from: value).filter { $0.lang == 3 && $0.name != "" && $0.lng != 30 }
-                self.viewDidLoad()
                 for plase in self.placesRu {
                     let position = CLLocationCoordinate2D(latitude: CLLocationDegrees (Float(plase.lat)), longitude: CLLocationDegrees (Float(plase.lng)))
                     let marker = GMSMarker(position: position)

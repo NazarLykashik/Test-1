@@ -21,6 +21,8 @@ class CityViewController: UIViewController, UITableViewDataSource{
         super.viewDidLoad()
         fechData()
         tableView.rowHeight = 100
+        citiesRu = StorageManager.shared.getCity()
+        self.navigationItem.title = "Города"
 
     }
   
@@ -41,6 +43,7 @@ class CityViewController: UIViewController, UITableViewDataSource{
             let plasesVC = segue.destination as! PlasesViewController
             let city = citiesRu[indexPath.row]
             plasesVC.cityId = city.id
+            plasesVC.cityName = city.name
             
             //print(city.id)
         }
@@ -61,6 +64,7 @@ class CityViewController: UIViewController, UITableViewDataSource{
                 self.cities = try JSONDecoder().decode([City].self, from: data)
                 let lang = cities.filter { $0.lang == 3 && $0.name != "" }
                 citiesRu = lang
+                StorageManager.shared.saveCity(citiesRu.self)
 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()

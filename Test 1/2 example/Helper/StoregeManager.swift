@@ -11,6 +11,7 @@ class StorageManager{
     static let shared = StorageManager()
     
     private var place: [Plases] = []
+    private var city: [City] = []
     private let defaults = UserDefaults.standard
     
     func getPlace() -> [Plases]{
@@ -29,5 +30,22 @@ class StorageManager{
     func savePlases(_ plase: [Plases]){
         guard let plaseEncoded = try? JSONEncoder().encode(plase) else {return}
         defaults.set(plaseEncoded, forKey: "savedPlace")
+    }
+    
+    func getCity() -> [City]{
+        if let data = UserDefaults.standard.data(forKey: "savedCity"){
+            do{
+                let decoder = JSONDecoder()
+                let cities = try decoder.decode([City].self, from: data)
+                return cities
+            }catch{
+                print("Unable to Decode cities (\(error))")
+            }
+        }
+         return city
+    }
+    func saveCity(_ city: [City]){
+        guard let cityEncoded = try? JSONEncoder().encode(city) else {return}
+        defaults.set(cityEncoded, forKey: "savedCity")
     }
 }
