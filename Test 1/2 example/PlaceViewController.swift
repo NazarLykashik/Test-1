@@ -29,9 +29,8 @@ class PlaceViewController: UIViewController {
         fetchImage()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-        
-        
     }
+    
     private func fetchImage(){
         guard let url = URL(string: photo) else {return}
         

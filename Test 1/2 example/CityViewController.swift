@@ -11,6 +11,7 @@ import Foundation
 class CityViewController: UIViewController, UITableViewDataSource{
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     private let jsonUrl = "https://krokapp.by/api/get_cities/11/"
     
     var cities: [City] = []
@@ -23,6 +24,8 @@ class CityViewController: UIViewController, UITableViewDataSource{
         tableView.rowHeight = 100
         citiesRu = StorageManager.shared.getCity()
         self.navigationItem.title = "Города"
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
 
     }
   
@@ -37,6 +40,7 @@ class CityViewController: UIViewController, UITableViewDataSource{
         cell.configure(with: city)
         return cell
     }
+    
   // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow{
@@ -44,12 +48,8 @@ class CityViewController: UIViewController, UITableViewDataSource{
             let city = citiesRu[indexPath.row]
             plasesVC.cityId = city.id
             plasesVC.cityName = city.name
-            
-            //print(city.id)
         }
     }
-
-
 
     func fechData(){
         guard let url = URL(string: jsonUrl) else {return}
@@ -68,6 +68,7 @@ class CityViewController: UIViewController, UITableViewDataSource{
 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.activityIndicator.stopAnimating()
                 }
             } catch let error{
                 print(error)

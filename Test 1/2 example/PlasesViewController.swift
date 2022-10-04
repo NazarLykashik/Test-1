@@ -35,14 +35,10 @@ class PlasesViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return currentPlace.count
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellOfPlaces", for: indexPath) as! ModifidedCell
@@ -53,8 +49,6 @@ class PlasesViewController: UITableViewController {
     }
 
     // MARK: - Navigation
-
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow{
             let plasesVC = segue.destination as! PlaceViewController
