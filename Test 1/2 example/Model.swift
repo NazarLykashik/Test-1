@@ -15,9 +15,7 @@ struct City: Codable {
     let logo: String?
     let name: String
     let region: String
-    let visible: Bool
-
-    
+    let visible: Bool  
 }
 
 struct Plases: Decodable, Encodable{

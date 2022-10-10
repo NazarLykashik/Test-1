@@ -12,7 +12,6 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
-  // 1
  
   func application(application: UIApplication) -> Bool {
     return true

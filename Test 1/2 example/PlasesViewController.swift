@@ -35,8 +35,8 @@ class PlasesViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return currentPlace.count
     }
 
@@ -49,6 +49,7 @@ class PlasesViewController: UITableViewController {
     }
 
     // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow{
             let plasesVC = segue.destination as! PlaceViewController
@@ -60,6 +61,7 @@ class PlasesViewController: UITableViewController {
             plasesVC.photo = place.photo ?? "no data -> error"
         }
     }
+    // MARK: - Networking
     
     func fetchPlases(){
         guard let url = URL(string: jsonOfPlases) else {return}

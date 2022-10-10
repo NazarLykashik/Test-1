@@ -11,17 +11,15 @@ import Alamofire
 class MapViewController: UIViewController {
     @IBOutlet var mapView: GMSMapView!
     
-
-    
     let jsonOfPlases = "https://krokapp.by/api/get_points/11/"
     var placesRu: [Plases] = []
     var cityId = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         fetchPlases()
     }
+    // MARK: - Networking
 
     func fetchPlases(){
         guard let url = URL(string: jsonOfPlases) else {return}

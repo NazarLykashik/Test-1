@@ -28,6 +28,7 @@ class CityViewController: UIViewController, UITableViewDataSource{
         activityIndicator.hidesWhenStopped = true
 
     }
+    // MARK: - TableView 
   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -42,6 +43,7 @@ class CityViewController: UIViewController, UITableViewDataSource{
     }
     
   // MARK: - Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = tableView.indexPathForSelectedRow{
             let plasesVC = segue.destination as! PlasesViewController
@@ -50,6 +52,7 @@ class CityViewController: UIViewController, UITableViewDataSource{
             plasesVC.cityName = city.name
         }
     }
+    // MARK: - Networking
 
     func fechData(){
         guard let url = URL(string: jsonUrl) else {return}

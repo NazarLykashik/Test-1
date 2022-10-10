@@ -55,6 +55,7 @@ class PlaceViewController: UIViewController {
 //        }.resume()
 
         //MARK: - method with Alamofire
+        
         AF.request(url).validate().responseData { dataResponse in
             switch dataResponse.result{
             case .success(let data):
@@ -68,6 +69,7 @@ class PlaceViewController: UIViewController {
 }
 
 //MARK: -  delate html simbols
+
 extension Data {
     var html2AttributedString: NSAttributedString? {
         do {
